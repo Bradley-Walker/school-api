@@ -7,10 +7,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.post('/payload', (req, res) => {
-  exec('git -C /home/bradley/schoolApi reset --hard', execCallback);
-  exec('git -C /home/bradley/schoolApi clean -df', execCallback);
-  exec('git -C /home/bradley/schoolApi pull -f', execCallback);
-  exec('npm -C /home/bradley/schoolApi install --production', execCallback);
+  if(req.body.ref.split('/')[2] === 'dev') {
+    exec('git -C /home/bradley/schoolApi reset --hard', execCallback);
+    exec('git -C /home/bradley/schoolApi clean -df', execCallback);
+    exec('git -C /home/bradley/schoolApi pull -f', execCallback);
+    exec('npm -C /home/bradley/schoolApi install', execCallback);
+  }
 });
 
 app.listen(5000, () => {
