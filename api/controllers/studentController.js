@@ -4,11 +4,10 @@ var mongoose = require('mongoose'),
   Student = mongoose.model('Students');
 
 exports.getAll = (req, res) => {
-  Student.find({}, (err, student) => {
+  Student.find({}, (err, students) => {
       if(err)
         res.send(err);
-      res.json({it: "worked"});
-      //res.json(student);
+      res.json(students);
     }
   );
 };
