@@ -1,0 +1,24 @@
+{
+  "name": "schoolapi",
+  "version": "1.0.0",
+  "description": "A RESTful API that exposes resources for a school management application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "School",
+    "REST",
+    "API"
+  ],
+  "author": "Bradley Walker",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.9"
+  }
+}
