@@ -7,7 +7,7 @@ exports.getAll = (req, res) => {
   Student.find({}, (err, student) => {
       if(err)
         res.send(err);
-      res.setStatus(418);
+      res.json({it: "worked"});
       //res.json(student);
     }
   );
